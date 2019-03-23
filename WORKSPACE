@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 
 git_repository(
     name = "io_bazel_rules_python",
@@ -18,3 +19,18 @@ pip_import(
 
 load("@requirements//:requirements.bzl", "pip_install")
 pip_install()
+
+
+new_git_repository(
+    name = "glfw",
+    remote = "https://github.com/glfw/glfw.git",
+    commit = "8d7e5cdb49a1a5247df612157ecffdd8e68923d2",
+    build_file = "@//:glfw.BUILD",
+)
+
+new_git_repository(
+    name = "glm",
+    remote = "https://github.com/g-truc/glm.git",
+    commit = "658d8960d081e0c9c312d49758c7ef919371b428",
+    build_file = "@//:glm.BUILD",
+)
