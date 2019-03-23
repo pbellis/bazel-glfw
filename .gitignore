@@ -1,0 +1,5 @@
+bazel*
+.vagrant/
+Vagrantfile
+.idea/
+.vscode/
